@@ -18,21 +18,21 @@ Além disso, os Contratados podem declarar seus dependentes, sendo que cada depe
 ## Estrutura do Banco de Dados
 O banco de dados é composto pelas seguintes tabelas:
 
-- Pessoa: Armazenar informações comuns a todos os indivíduos, como matricula, nome e email. Boa prática para evitar a duplicação de dados.
+- `Pessoa`: Armazenar informações comuns a todos os indivíduos, como matricula, nome e email. Boa prática para evitar a duplicação de dados.
 
-- As tabelas Aluno, Professor e Funcionario herdam de Pessoa através de uma chave estrangeira que referencia matricula. Além disso, essas tabelas armazenam dados específicos para cada tipo de pessoa, como mensalidade (aluno), salário (prof e funcionário), formação (prof) e função (funcionário).
+- As tabelas `Aluno`, `Professor` e `Funcionario` herdam de Pessoa através de uma chave estrangeira que referencia matricula. Além disso, essas tabelas armazenam dados específicos para cada tipo de pessoa, como mensalidade (aluno), salário (prof e funcionário), formação (prof) e função (funcionário).
 
-- UnidadeAcademica: Representa as unidades acadêmicas da universidade, como faculdades ou departamentos.
+- `UnidadeAcademica`: Representa as unidades acadêmicas da universidade, como faculdades ou departamentos.
 
-- Contratado: Representa tanto Professor quanto Funcionario, pois ambos são contratados pela universidade, tendo uma data_inicio e uma unidade_academica associada.
+- `Contratado`: Representa tanto Professor quanto Funcionario, pois ambos são contratados pela universidade, tendo uma data_inicio e uma unidade_academica associada.
 
-- Dependente: Tabela associada a Contratado através de uma chave estrangeira. Isso garante que cada dependente esteja associado a no máximo um contratado. 
+- `Dependente`: Tabela associada a Contratado através de uma chave estrangeira. Isso garante que cada dependente esteja associado a no máximo um contratado. 
 
-- Disciplina: Contém informações sobre as disciplinas oferecidas pela universidade.
+- `Disciplina`: Contém informações sobre as disciplinas oferecidas pela universidade.
 
-- Turma: Tabela associada a Disciplina e Professor. Permite que você saiba qual professor está ensinando qual disciplina em qual turma, além do horário.
+- `Turma`: Tabela associada a Disciplina e Professor. Permite que você saiba qual professor está ensinando qual disciplina em qual turma, além do horário.
 
-- Aluno_Turma: Associa Aluno a Turma e inclui o semestre. A chave primária é uma combinação de aluno, turma e semestre, o que impede que um aluno se matricule na mesma turma no mesmo semestre, conforme exigido pelo enunciado.
+- `Aluno_Turma`: Associa Aluno a Turma e inclui o semestre. A chave primária é uma combinação de aluno, turma e semestre, o que impede que um aluno se matricule na mesma turma no mesmo semestre, conforme exigido pelo enunciado.
 
 ## DER (Diagrama Entidade e Relacionamento)
 ![alt text](image-1.png)
